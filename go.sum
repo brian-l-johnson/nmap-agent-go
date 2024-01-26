@@ -1,5 +1,11 @@
 github.com/Ullaakut/nmap/v3 v3.0.2 h1:AqQ9UYxLWzYZTv/rzMzVn8+LIgFGxGi+4h+3pDkFOII=
 github.com/Ullaakut/nmap/v3 v3.0.2/go.mod h1:dd5K68P7LHc5nKrFwQx6EdTt61O9UN5x3zn1R4SLcco=
+github.com/google/uuid v1.5.0 h1:1p67kYwdtXjb0gL0BPiP1Av9wiZPo5A8z2cWkTZ+eyU=
+github.com/google/uuid v1.5.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
+github.com/joho/dotenv v2.2.0+incompatible h1:8xL0SRBf5L+fG/f+odAIrUbuZ32Ab60P5Vs2krwH+Hw=
+github.com/joho/dotenv v2.2.0+incompatible/go.mod h1:Fx12nBT8vzHuSnKi466wSDcZPVrMdE8+0e91lBaPQPk=
+github.com/joho/godotenv v1.5.1 h1:7eLL/+HRGLY0ldzfGMeQkb7vMd0as4CfYvUVzLqw0N0=
+github.com/joho/godotenv v1.5.1/go.mod h1:f4LDr5Voq0i2e/R5DDNOoa2zzDfwtkZa6DnEwAbqwq4=
 golang.org/x/net v0.20.0 h1:aCL9BSgETF1k+blQaYUBx9hJ9LOGP3gAVemcZlf1Kpo=
 golang.org/x/net v0.20.0/go.mod h1:z8BVo6PvndSri0LbOE3hAn0apkU+1YvI6E70E9jsnvY=
 golang.org/x/sync v0.1.0 h1:wsuoTGHzEhffawBOhz5CYhcrV4IdKZbEyZjBMuTp12o=

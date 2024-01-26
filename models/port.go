@@ -1,7 +1,7 @@
 package models
 
 type Port struct {
-	Id       uint16
+	Number   uint16
 	State    string
 	Protocol string
 	Service  string
