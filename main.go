@@ -10,6 +10,7 @@ import (
 	"net/http"
 	"net/http/cookiejar"
 	"os"
+	"strconv"
 	"time"
 
 	"github.com/Ullaakut/nmap/v3"
@@ -60,6 +61,15 @@ func main() {
 	if err != nil {
 		log.Fatal("Error loading .env file")
 	}
+	ts := os.Getenv("SCAN_TIMEOUT")
+	timeout := 5
+	if ts != "" {
+		timeout, err = strconv.Atoi(ts)
+		if err != nil {
+			log.Fatal("Failed to parse timeout")
+			panic("bad config")
+		}
+	}
 
 	jar, err := cookiejar.New(&cookiejar.Options{PublicSuffixList: publicsuffix.List})
 	if err != nil {
@@ -85,7 +95,7 @@ func main() {
 
 	*/
 
-	ctx, cancel := context.WithTimeout(context.Background(), 8*time.Minute)
+	ctx, cancel := context.WithTimeout(context.Background(), time.Duration(time.Duration(timeout).Minutes()))
 	defer cancel()
 
 	// Equivalent to `/usr/local/bin/nmap -p 80,443,843 google.com facebook.com youtube.com`,
