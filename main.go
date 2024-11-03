@@ -20,6 +20,7 @@ import (
 )
 
 func doLogin(client *http.Client) {
+	fmt.Printf("attempting to login to %v\n", os.Getenv("API_URL_BASE"))
 	loginVals := map[string]string{"user": os.Getenv("API_USER"), "password": os.Getenv("API_PASS")}
 	jsonValue, _ := json.Marshal(loginVals)
 	resp, err := client.Post(os.Getenv("API_URL_BASE")+"/auth/login", "application/json", bytes.NewBuffer(jsonValue))
@@ -56,7 +57,6 @@ func postResult(client *http.Client, scanJson string, job models.Job) {
 }
 
 func main() {
-
 	err := godotenv.Load()
 	if err != nil {
 		log.Fatal("Error loading .env file")
@@ -95,7 +95,7 @@ func main() {
 
 	*/
 
-	ctx, cancel := context.WithTimeout(context.Background(), time.Duration(time.Duration(timeout).Minutes()))
+	ctx, cancel := context.WithTimeout(context.Background(), time.Duration(timeout)*time.Minute)
 	defer cancel()
 
 	// Equivalent to `/usr/local/bin/nmap -p 80,443,843 google.com facebook.com youtube.com`,
